@@ -1,37 +1,86 @@
-## Welcome to GitHub Pages
+%%writefile index.html
 
-You can use the [editor on GitHub](https://github.com/ajnaser415/ajnaser415.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+<head>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <!-- CSS helps us design the feel and style of the UI. In this example, we're using Google's Material Design-->
 
-### Markdown
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import CSS for Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+     <!--Optimize Viewport for Mobile Devices-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-```markdown
-Syntax highlighted code block
+</head>
+<body>
 
-# Header 1
-## Header 2
-### Header 3
+    <!-- Title Bar -->
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Skin Cancer Diagnosis</a>
+        </div>
+      </nav>
 
-- Bulleted
-- List
+    <!-- Contain for all other HTML Elements -->
+    <div style="padding:5%;">
 
-1. Numbered
-2. List
+        <!-- Loading Bar -->
+        <h4 id="loadingmodel">Loading ML Model</h4>
+        <div id="progressbar" class="progress">
+            <div class="indeterminate"></div>
+        </div>
 
-**Bold** and _Italic_ and `Code` text
+        <!-- Image File Input -->
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>Select Image</span>
+              <input type="file" accept="image/*" onchange="onFileSelected(event)">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+        
+        <!-- Image to be Classified -->
+        <img id="image" width="100" height="75"></img>
 
-[Link](url) and ![Image](src)
-```
+        <!-- Add New Lines -->
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        <br/>
+        <br/>
+        
+        <!-- Button to Perform Classification -->
+        <a onclick="predict()" class="waves-effect waves-light btn">Classify Image</a>
+        
+        <!-- Text Fields for the Prediction and the Probability -->
+        <h3>Prediction</h3>
 
-### Jekyll Themes
+        <b><p id="prediction"></p></b>
+        <p id="probability"></p>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ajnaser415/ajnaser415.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    </div>
+        
+    <!-- Import JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="static/js/skin_cancer_diagnosis_script.js"></script>
 
-### Support or Contact
+    <!-- Javascript allows us to apply logic to our UI elements and programmatically control the website -->
+    <!-- We'll be using Tensorflow JS to perform our model inference -->
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+    <script>
+        
+        // Initialize our HTML elements as JS objects
+
+        var imgtag = document.getElementById("image")
+        var prediction_text = document.getElementById("prediction")
+        var probability_text = document.getElementById("probability")
+
+        var progressbar = document.getElementById("progressbar")
+        var loadingmodel = document.getElementById("loadingmodel")
+
+        //console.log(imgtag)
+        
+    </script>
+</body>
