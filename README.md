@@ -1,8 +1,12 @@
 %%writefile index.html
+<!-- Demo: https://rganesh22.github.io/htmlmockups/tensorflowjs.html -->
+<!-- HTML allows us to create UI elements we can interact with-->
 
 <head>
-    
-    !-- Import Google Icon Font -->
+
+    <!-- CSS helps us design the feel and style of the UI. In this example, we're using Google's Material Design-->
+
+    <!-- Import Google Icon Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Import CSS for Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
