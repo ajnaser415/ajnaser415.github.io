@@ -54,11 +54,15 @@
     <!-- We'll be using Tensorflow JS to perform our model inference -->
     <script>
         // Initialize our HTML elements as JS objects
+    
         var imgtag = document.getElementById("image")
         var prediction_text = document.getElementById("prediction")
         var probability_text = document.getElementById("probability")
+        
         var progressbar = document.getElementById("progressbar")
         var loadingmodel = document.getElementById("loadingmodel")
+        
         //console.log(imgtag)
+        
     </script>
 </body>
