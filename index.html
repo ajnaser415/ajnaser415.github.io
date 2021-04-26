@@ -34,15 +34,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
     <script src="static/js/skin_cancer_diagnosis_script.js"></script>
-    <script>
-        //Initialize our HTML elements as JS objects
-        var imgtag = document.getElementById("image")
-        var prediction_text = document.getElementById("prediction")
-        var probability_text = document.getElementById("probability")
-        var progressbar = document.getElementById("progressbar")
-        var loadingmodel = document.getElementById("loadingmodel")
-        //console.log(imgtag)
-      var model = null
+    var model = null
 
 var classes = ['Actinic Keratoses', 'Basal Cell Carcinoma', 'Benign Keratoses', 'Dermatofibroma', 'Melanoma', 'Melanocytic Nevus', 'Vascular Lesion']
 
@@ -111,5 +103,13 @@ async function loadModel(){
 }
 
 loadModel()
+    <script>
+        //Initialize our HTML elements as JS objects
+        var imgtag = document.getElementById("image")
+        var prediction_text = document.getElementById("prediction")
+        var probability_text = document.getElementById("probability")
+        var progressbar = document.getElementById("progressbar")
+        var loadingmodel = document.getElementById("loadingmodel")
+        //console.log(imgtag)
     </script>
 </body>
