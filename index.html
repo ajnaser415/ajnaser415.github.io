@@ -1,3 +1,4 @@
+<!-- Demo: https://rganesh22.github.io/htmlmockups/tensorflowjs.html -->
 <!-- HTML allows us to create UI elements we can interact with-->
 
 <head>
@@ -35,11 +36,13 @@
         <div class="file-field input-field">
             <div class="btn">
               <span>Select Image</span>
-	@@ -23,93 +41,113 @@ <h4 id="loadingmodel">Loading ML Model</h4>
+              <input type="file" accept="image/*" onchange="onFileSelected(event)">
+            </div>
+            <div class="file-path-wrapper">
               <input class="file-path validate" type="text">
             </div>
           </div>
-
+        
         <!-- Image to be Classified -->
         <img id="image" width="100" height="75"></img>
 
@@ -47,10 +50,10 @@
 
         <br/>
         <br/>
-
+        
         <!-- Button to Perform Classification -->
         <a onclick="predict()" class="waves-effect waves-light btn">Classify Image</a>
-
+        
         <!-- Text Fields for the Prediction and the Probability -->
         <h3>Prediction</h3>
 
@@ -58,7 +61,7 @@
         <p id="probability"></p>
 
     </div>
-
+        
     <!-- Import JS Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
@@ -67,7 +70,7 @@
     <!-- We'll be using Tensorflow JS to perform our model inference -->
 
     <script>
-
+        
         // Initialize our HTML elements as JS objects
 
         var imgtag = document.getElementById("image")
@@ -146,6 +149,6 @@
         }
 
         loadModel()
-
+        
     </script>
 </body>
